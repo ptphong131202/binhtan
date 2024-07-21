@@ -7,17 +7,37 @@ import './Navigator.scss';
 
 class MenuGroup extends Component {
 
+    removeSystemPrefix(path) {
+        const prefix = "/system/";
+        const newPrefix = "menu.admin.";
+        
+        if (path.startsWith(prefix)) {
+            return newPrefix + path.slice(prefix.length);
+        }
+        return newPrefix + path;
+    }
     render() {
         const { name, children } = this.props;
+        let patname = this.removeSystemPrefix(this.props.location.pathname);
+        console.log(patname)
+        console.log(name)
         return (
+            
+            <>
             <li className="menu-group">
-                <div className="menu-group-name">
+                { patname ===  name ? 
+                    <div className="menu-group-name name-bold">
                     <FormattedMessage id={name} />
+                </div> :
+                <div className="menu-group-name ">
+                        <FormattedMessage id={name} />
                 </div>
+                }
                 <ul className="menu-list list-unstyled">
                     {children}
                 </ul>
             </li>
+            </>
         );
     }
 }

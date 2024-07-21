@@ -4,7 +4,7 @@
     "dialect": "mysql",
     "host": "127.0.0.1",
     "logging": false,
-    "password": null,
+    "password": "123456789",
     "query": {
       "raw": true
     },

@@ -22,16 +22,6 @@ import ConfirmModal from '../components/ConfirmModal';
 import HomePage from './HomePage/HomePage';
 import Doctor from '../routes/Doctor';
 
-import DetailDoctor from './Patient/Doctor/DetailDoctor';
-import VerifyEmail from './Patient/VerifyEmail';
-import DetailSpecialty from './Patient/Specialty/DetailSpecialty';
-import DetailClinic from "./Patient/Clinic/DetailClinic"
-import ListSpecialty from './Patient/Specialty/ListSpecialty';
-import ListClinic from './Patient/Clinic/ListClinic';
-import ListDoctor from './Patient/Doctor/ListDoctor';
-import DetailHandbook from './Patient/Handbook/DetailHandbook';
-import ListHandBook from './Patient/Handbook/ListHandBook';
-import PacketExam from './Patient/PacketExam/PacketExam';
 class App extends Component {
 
     handlePersistorState = () => {
@@ -67,17 +57,6 @@ class App extends Component {
                                 <Route path={path.SYSTEM} component={userIsAuthenticated(System)} />
                                 <Route path={"/doctor/"} component={userIsAuthenticated(Doctor)} />
                                 <Route path={path.HOMEPAGE} component={HomePage} />
-                                <Route path={path.LISTSPECIALTY} component={ListSpecialty} />
-                                <Route path={path.LISTCLINIC} component={ListClinic} />
-                                <Route path={path.LISTDOCTOR} component={ListDoctor} />
-                                <Route path={path.LISTHANDBOOK} component={ListHandBook} />
-                                <Route path={path.DETAIL_DOCTOR} component={DetailDoctor} />
-                                <Route path={path.PACKETEXAM} component={PacketExam} />
-                                <Route path={path.DETAIL_SPECIALTY} component={DetailSpecialty} />
-                                <Route path={path.DETAIL_CLINIC} component={DetailClinic} />
-                                <Route path={path.DETAIL_HANDBOOK} component={DetailHandbook} />
-                                <Route path={path.VERIFY_EMAIL_BOOK} component={VerifyEmail} />
-
                             </Switch>
                         </span>
 

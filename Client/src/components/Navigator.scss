@@ -13,7 +13,8 @@
     .menu-group {
         &:hover {
             cursor: pointer;
-            background-color: darken($colormain, 5);
+            background-color: green;
+            color: white;
         }
 
         .menu-group-name {
@@ -22,6 +23,10 @@
             border-right: 1px solid $border;
             min-width: 120px;
             text-align: center;
+            &.name-bold{
+                background-color: green;
+                color: white;
+            }
 
             &:first-child {
                 /* border-left: 1px solid $border; */

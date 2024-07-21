@@ -2,59 +2,95 @@
 
 .header-container {
     z-index: 99;
-    display: flex;
-    justify-content: space-between;
-    background-color: $colormain;
-    color: $common-text-color;
-    height: 40px;
+    background-color: white;
+    color: black;
+    height: 140px;
     position: fixed;
     top: 0;
     left: 0;
     right: 0;
-    margin-bottom: 50px;
+    display: flex;
+    justify-content: left;
+    box-shadow: rgba(0, 0, 0, 0.16) 0px 1px 4px;
 
-    .language {
-        padding: 0 10px;
+    .left{
+        height: 80px;
+        width: 190px;
+        img{
+            height: 140px;
+            width: 190px;
+        }
+    }
 
-        .language-vi {
-            cursor: pointer;
+    .header-container-down{
+        flex: 1;
+        .top{
+            width: 100%;
+            display: flex;
+            justify-content: space-between;
+            padding: 10px 20px;
+            border-bottom: 1px solid black;
 
-            &.active {
-                color: red;
+            .name-c{
+                font-size: 35px;
+                font-weight: bold;
+                text-shadow: 0px -1px;
+            }
+
+            .name-u{
+                font-weight: bold;
+                font-size: 16px;
             }
         }
-
-        .welcom {
-            padding: 0 10px;
-
-            b {
-                color: red;
+        .language {
+            .language-vi {
+                cursor: pointer;
+                font-size: 20px;
+    
+                &.active {
+                    color: red;
+                }
+            }
+    
+            .welcom {
+                padding: 0 10px;
+                font-size: 20px;
+    
+                b {
+                    color: #1700d3;
+                }
+            }
+    
+            .language-en {
+                padding: 0 10px;
+                cursor: pointer;
+                font-size: 20px;
+    
+                &.active {
+                    color: orange;
+                }
+            }
+    
+            .btn-logout {
+                color: $common-text-color;
+                line-height: 40px;
+                height: 40px;
+                padding: 0 10px;
+    
+                &:hover {
+                    background-color: darken($colormain, 5);
+                }
+    
+                i {
+                    font-size: 21px;
+                    color: black;
+                }
             }
         }
+    }
 
-        .language-en {
-            padding: 0 10px;
-            cursor: pointer;
-
-            &.active {
-                color: orange;
-            }
-        }
-
-        .btn-logout {
-            color: $common-text-color;
-            line-height: 40px;
-            height: 40px;
-            padding: 0 10px;
-
-            &:hover {
-                background-color: darken($colormain, 5);
-            }
-
-            i {
-                font-size: $base-size + 1px;
-            }
-        }
+    .header-tabs-container{
+        margin-top: 2px;
     }
 
 

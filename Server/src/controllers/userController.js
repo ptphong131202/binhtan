@@ -13,12 +13,9 @@ let handleLoging = async (req, res) => {
             message: 'Missing inputs parameter!'
         })
     }
+    console.log(email, password)
 
     let userData = await userService.handleUserLogin(email, password)
-    //check email exist
-    //password nhap vao ko dung
-    //return userInfor
-    // access_token :JWT json web token
 
     return res.status(200).json({
         errCode: userData.errCode,

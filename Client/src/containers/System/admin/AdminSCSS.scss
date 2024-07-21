@@ -1,0 +1,23 @@
+.content-box{
+    width: 100%;
+    height: calc(100vh);
+    padding-top: 150px;
+
+    .home-admin{
+        height: 100%;
+        background-repeat: no-repeat;
+        background-size: 100%;
+        box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
+        text-align: center;
+        padding: 20px;
+
+        .name-c{
+            font-size: 40px;
+            font-weight: bold;
+            text-shadow: 2px 2px 2px;
+        }
+        .name-t{
+            font-size: 20px;
+        }
+    }
+}
