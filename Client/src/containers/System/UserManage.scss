@@ -1,0 +1,106 @@
+.button {
+    border: none;
+    font-size: 12px;
+    padding: 5px 10px;
+    border-radius: 5px;
+    color: white;
+    font-weight: bold;
+}
+
+.buttonEdit {
+    background-color: rgba(255, 255, 0, 0.7);
+
+    &:hover {
+        background-color: rgba(255, 255, 0, 1);
+    }
+}
+
+.buttonDelete {
+    background-color: rgba(255, 0, 0, 0.7);
+    margin-left: 5px;
+
+    &:hover {
+        background-color: rgba(255, 0, 0, 1);
+    }
+}
+
+.bg-th {
+    background: #0202f1;
+    color: white;
+}
+
+.model-user-container {
+    .modal-content {
+        .close {
+            border: none;
+            color: #ffff;
+            background-color: transparent;
+            font-size: 25px;
+        }
+    }
+
+    .row {
+        width: 100%;
+        padding: 10px;
+        display: flex;
+        flex-wrap: wrap;
+
+        .form-group {
+            width: 50%;
+            margin-top: 10px;
+        }
+
+        .addressInput {
+            width: 100%;
+        }
+    }
+
+    .ModalFooter {
+        border: none;
+        padding: 10px 40px;
+    }
+}
+
+
+.userManage {
+    .email {
+        width: 20%;
+    }
+
+    .name {
+        width: 10%;
+    }
+
+    .phone {
+        width: 10%;
+    }
+
+    .address {
+        -webkit-box-orient: vertical;
+        -webkit-line-clamp: 1;
+        height: 20px;
+        overflow: hidden;
+        display: -webkit-box;
+    }
+
+    .action {
+        width: 10%;
+        text-align: center;
+    }
+}
+
+
+.table-manager {
+    box-shadow: rgba(0, 0, 0, 0.16) 0px 3px 6px, rgba(0, 0, 0, 0.23) 0px 3px 6px;
+}
+
+.adduser {
+    box-shadow: rgba(0, 0, 0, 0.16) 0px 3px 6px, rgba(0, 0, 0, 0.23) 0px 3px 6px;
+    background-color: rgba(0, 0, 255, 0.6);
+    color: #ffff;
+
+    &:hover {
+        background-color: rgba(0, 0, 255, 1);
+        color: #ffff;
+    }
+}
