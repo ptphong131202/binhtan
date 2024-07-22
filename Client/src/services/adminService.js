@@ -1,19 +1,20 @@
 import axios from '../axios';
-import * as queryString from 'query-string';
 
-const adminService = {
+// get background
+const getbackground = (id) => {
+    return axios.get(`api/get-background`); 
+}
 
-    /**
-     * Đăng nhập hệ thống
-     * {
-     *  "username": "string",
-     *  "password": "string"
-     * }
-     */
-    login(loginBody) {
-        return axios.post(`/admin/login`, loginBody)
-    },
+const postbackground = (data) => {
+    return axios.post(`api/post-background`, data);
+}
 
+const deletebackground = (id) => {
+    return axios.delete(`/api/delete-background`, {
+      data: { id: id }
+    })
+  }
+
+export {
+    getbackground,postbackground,deletebackground
 };
-
-export default adminService;

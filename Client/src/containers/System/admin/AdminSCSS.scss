@@ -1,7 +1,7 @@
 .content-box{
     width: 100%;
     height: calc(100vh);
-    padding-top: 150px;
+    padding-top: 140px;
 
     .home-admin{
         height: 100%;
@@ -10,6 +10,131 @@
         box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
         text-align: center;
         padding: 20px;
+        position: relative;
+        background-position: center;
+
+        .class-marquee{
+            display: flex;
+            justify-content: center;
+            width: 100%;
+            marquee{
+                font-weight: bold;
+                font-size: 25px;
+            }
+        }
+        .add-bg{
+            position: fixed;
+            bottom: 10px;
+            left: 10px;
+            width: 70px;
+            height: 70px;
+            border: 3px solid black;
+            border-radius: 50%;
+            text-align: center;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            background: #49ddee;
+            cursor: pointer;
+
+            &.bg-select{
+                cursor: default;
+            }
+        }
+        .select-option-bg{
+            width: 200px;
+            border: 1px solid #ccc;
+            position: fixed;
+            bottom: 10px ;
+            left: 85px;
+            text-align: left;
+            border-radius: 2px;
+            background-color: white;
+
+            p{
+                font-size: 18px;
+                padding: 5px 10px;
+                cursor: pointer;
+                margin: 0;
+
+                &.close-select{
+                    cursor: default;
+                    font-size: 16px;
+                    text-align: right;
+                    border-bottom: 1px solid #ccc;
+                    padding: 2px 5px;
+                    padding-right: 10px;
+                    span{
+                        cursor: pointer;
+                        border: 1px solid black;
+                        padding: 2px 5px;
+                        border-radius: 50%;
+                    }
+                    &:hover{
+                        background: white ;
+                        color: black;
+                    }
+                }
+
+                &:hover{
+                    background: wheat ;
+                    color: red;
+                }
+            }
+        }
+
+        .modal-add{
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background-color: rgba(0, 0, 0, 0.3);
+            display: flex;
+            justify-content: center;
+            align-items: center;
+
+            .modal-add-content{
+                width: 430px;
+                height: 200px;
+                background-color: white;
+                border-radius: 5px;
+                .text1{
+                    font-size: 20px;
+                    font-weight: bold;
+                    margin-top: 10px;
+                }
+                .text2{
+                    color: red;
+                    font-size: 12px;
+                    margin-bottom: 10px;
+                }
+
+                .buttton{
+                    margin-top: 15px;
+                    button{
+                        background-color: #ccc;
+                        border-color: #ccc;
+                        &:hover{
+                            background-color: blue;
+                            border-color: blue;
+                            color: white;
+                        }
+
+                        &.btn2{
+                            margin-left: 10px;
+                            background-color: #fffc;
+                            &:hover{
+                                background-color: red;
+                                border-color: red;
+                                color: white;
+                            }
+                        }
+                    }
+                    
+                }
+            }
+        }
 
         .name-c{
             font-size: 40px;
@@ -19,5 +144,88 @@
         .name-t{
             font-size: 20px;
         }
+
+
+        .listImage{
+            width: 300px;
+            height: 300px;
+            border: 1px solid black;
+            position: fixed;
+            bottom: 10px;
+            left: 300px;
+            border-radius: 5px;
+            
+            overflow-y: auto;
+
+            
+
+            .listImage-s {
+                width: 100%;
+
+                li{
+                    width: 100%;
+                    list-style: none;
+                    position: relative;
+                    &:hover .select-option-image{
+                        display: flex;
+                    }
+                    img{
+                        width: 100%;
+                        height: 160px;
+                    }
+
+                    .select-option-image{
+                        position: absolute;
+                        top: 0;
+                        right: 0;
+                        display: flex;
+                        flex-direction: column;
+                        margin-right: 5px;
+                        margin-top: 5px;
+                        display: none;
+
+                        span{
+                            border-radius: 10px;
+                            padding: 5px;
+                            margin-bottom: 10px;
+                            cursor: pointer;
+                            &.c1{
+                                background-color: rgba(0, 128, 0, 0.5);
+                                border: 1px solid green;
+                                color: white;
+                                &:hover{
+                                background-color: rgb(0, 128, 0);
+
+                                }
+                            }
+                            &.c2{
+                                background-color: rgba(255, 0, 0, 0.5);
+                                border: 1px solid red;
+                                color: white;
+                                &:hover{
+                                background-color: rgb(255, 0, 0);
+
+                                }
+                            }
+                        }
+
+                    }
+                }
+            }
+        }
+
+        .closelistimage{
+            position: fixed;
+            bottom: 300px;
+            left: 606px;
+            font-size: 20px;
+            border: 1px solid #ccc;
+            border-radius: 50%;
+            padding: 2px 12px;
+            font-weight: bold;
+            background: white;
+        }
+
+        
     }
 }
