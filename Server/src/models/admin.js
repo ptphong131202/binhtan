@@ -2,6 +2,7 @@
 const {
   Model
 } = require('sequelize');
+const tunure = require('./tunure');
 module.exports = (sequelize, DataTypes) => {
   class Admin extends Model {
     /**
@@ -11,6 +12,8 @@ module.exports = (sequelize, DataTypes) => {
      */
     static associate(models) {
       // define association here
+      Admin.belongsTo(models.Allcode, { foreignKey: 'position' , targetKey: 'keyMap', as: 'positionAdmin' });
+      Admin.belongsTo(models.Tunure, { foreignKey: 'tunure' , targetKey: 'id', as: 'tunureAdmin' });
     }
   };
   Admin.init({
@@ -21,6 +24,7 @@ module.exports = (sequelize, DataTypes) => {
     gender: DataTypes.STRING,
     image: DataTypes.STRING,
     position: DataTypes.STRING,
+    tunure: DataTypes.STRING,
     biography: DataTypes.STRING,
   }, {
     sequelize,

@@ -31,6 +31,9 @@ module.exports = {
       position: {
           type: Sequelize.STRING
         },
+        tunure: {
+          type: Sequelize.STRING
+        },
       biography: {
         type: Sequelize.STRING
       },

@@ -4,6 +4,7 @@ import { LANGUAGE, CRUD_ACTION, CommonUtils } from '../../../utils'; // vi or en
 import { changeLanguage } from '../../../store/actions'; // change language
 import { connect } from 'react-redux';
 import "./AdminSCSS.scss";
+import "./Responsive.scss"
 import { toast } from 'react-toastify';
 import { getbackground,  postbackground, deletebackground } from '../../../services/adminService';
 import { isEmpty } from 'lodash';
@@ -144,7 +145,7 @@ class AdminHome extends Component {
             <title><FormattedMessage id="menu.admin.home-admin" /></title>
                 <div className='content-box'>
                     <div className='home-admin' style={{ backgroundImage: `url(${this.state.image})` }}>
-                        <div className='class-marquee'><marquee width="35%" scrollamount="10" direction="left">Chi hội sinh viên Bình Tân Gắn kết như tình thân!</marquee></div>
+                        <div className='class-marquee '><marquee width="35%" scrollamount="10" direction="left">Chi hội sinh viên Bình Tân Gắn kết như tình thân!</marquee></div>
                         <div className='add-bg' onClick={() => this.isModalSelectset()}>
                             Thay đổi ảnh nền
                         </div>
@@ -160,7 +161,7 @@ class AdminHome extends Component {
 
                         {this.state.isModalSelect  === true && 
                             <div className='select-option-bg' >
-                                <p className='close-select'><span onClick={() => this.isModalSelectset()}>x</span></p>
+                                <span onClick={() => this.isModalSelectset()}>x</span>
                                 <p onClick={() => this.isModalSet()}>Ảnh mới</p>
                                 <p onClick={() => this.isModalSelectImage()}>Ảnh trên hệ thống</p>
                             </div>

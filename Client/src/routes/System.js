@@ -5,6 +5,7 @@ import ManageAdmin from '../containers/System/admin/ManageAdmin';
 import ManageMember from '../containers/System/admin/ManageMember';
 import AdminHome from '../containers/System/admin/AdminHome';
 import Header from '../containers/Header/Header';
+import ManageTunure from '../containers/System/Tunure/ManageTunure';
 class System extends Component
 {
     render ()
@@ -20,6 +21,7 @@ class System extends Component
                             <Route path="/system/manage-admin" component={ ManageAdmin } />
                             <Route path="/system/home-admin" component={ AdminHome } />
                             <Route path="/system/manage-member" component={ ManageMember } />
+                            <Route path="/system/manage-tunure" component={ ManageTunure } />
                             <Route component={ () => { return ( <Redirect to={ systemMenuPath } /> ) } } />
                         </Switch>
                     </div>

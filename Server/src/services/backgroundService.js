@@ -1,6 +1,4 @@
-import { reject } from 'lodash';
 import db from '../models/index';
-import { where } from 'sequelize';
 
 let getbackground = () =>{
     return new Promise(async (resolve, reject) => {

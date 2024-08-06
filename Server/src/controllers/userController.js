@@ -24,6 +24,21 @@ let handleLoging = async (req, res) => {
     })
 }
 
+let getallcode = async (req, res) => {
+    try {
+        let data = await userService.getallcode(req.query.type);
+        return res.status(200).json(data);
+
+    }
+    catch (err) {
+        return res.status(200).json({
+            errCode: -1,
+            errMessage: "Error from server!"
+        })
+    }
+}
+
 module.exports = {
     handleLoging: handleLoging,
+    getallcode: getallcode
 }

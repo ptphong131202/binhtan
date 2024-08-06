@@ -1,10 +1,10 @@
 export const adminMenu = [
-    { //quản lý người dùng
-        name: 'menu.admin.home-admin',
+    { 
+        name: 'menu.admin.manage-tunure',
         menus: [
 
             {
-                name: 'menu.admin.home-admin', link: '/system/home-admin'
+                name: 'menu.admin.manage-tunure', link: '/system/manage-tunure'
             }
         ]
     },
@@ -13,13 +13,14 @@ export const adminMenu = [
         menus: [
 
             {
-                name: 'menu.admin.manage-admin', link: '/system/manage-admin'
+                name: 'menu.admin.manage-admin', link: '/system/manage-admin' 
             },
             {
-                name: 'menu.admin.manage-member', link: '/system/manage-menber'
+                name: 'menu.admin.manage-member', link: '/system/manage-member'
             }
         ]
     }
+    
 ];
 
 

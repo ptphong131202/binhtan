@@ -7,32 +7,15 @@ import './Navigator.scss';
 
 class MenuGroup extends Component {
 
-    removeSystemPrefix(path) {
-        const prefix = "/system/";
-        const newPrefix = "menu.admin.";
-        
-        if (path.startsWith(prefix)) {
-            return newPrefix + path.slice(prefix.length);
-        }
-        return newPrefix + path;
-    }
     render() {
         const { name, children } = this.props;
-        let patname = this.removeSystemPrefix(this.props.location.pathname);
-        console.log(patname)
-        console.log(name)
         return (
-            
             <>
+            
             <li className="menu-group">
-                { patname ===  name ? 
-                    <div className="menu-group-name name-bold">
-                    <FormattedMessage id={name} />
-                </div> :
-                <div className="menu-group-name ">
+            <div className="menu-group-name ">
                         <FormattedMessage id={name} />
                 </div>
-                }
                 <ul className="menu-list list-unstyled">
                     {children}
                 </ul>
@@ -182,19 +165,6 @@ class Navigator extends Component {
         this.checkActiveMenu();
     };
 
-    // componentWillReceiveProps(nextProps, prevState) {
-    //     const { location, setAccountMenuPath, setSettingMenuPath } = this.props;
-    //     const { location: nextLocation } = nextProps;
-    //     if (location !== nextLocation) {
-    //         let pathname = nextLocation && nextLocation.pathname;
-    //         if ((pathname.startsWith('/account/') || pathname.startsWith('/fds/account/'))) {
-    //             setAccountMenuPath(pathname);
-    //         }
-    //         if (pathname.startsWith('/settings/')) {
-    //             setSettingMenuPath(pathname);
-    //         };
-    //     };
-    // };
 
     componentDidUpdate(prevProps, prevState) {
         const { location } = this.props;
@@ -224,6 +194,7 @@ class Navigator extends Component {
                                                         active={isMenuHasSubMenuActive}
                                                         name={menu.name}
                                                         link={menu.link}
+                                                        parentname={menu.parentname}
                                                         hasSubMenu={menu.subMenus}
                                                         isOpen={isSubMenuOpen}
                                                         onClick={() => this.toggle(groupIndex, menuIndex)}

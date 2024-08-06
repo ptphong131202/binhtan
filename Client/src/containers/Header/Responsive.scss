@@ -1,0 +1,28 @@
+@media (max-width: 991px) {
+    .header-container .header-container-down .top{
+        .topname-display{
+            display: none;
+        }
+    
+        .wellcom-display{
+            display: none;
+        }
+
+        justify-content: right;
+    }
+    .header-container .header-tabs-container{
+        display: none;
+    }
+    .header-tabs-container-lihome{
+        height: 80px;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+    }
+}
+
+@media (min-width: 992px) {
+   .header-tabs-container-lihome{
+    display: none;
+   }
+}
