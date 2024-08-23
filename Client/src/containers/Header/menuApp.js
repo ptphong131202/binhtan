@@ -1,10 +1,10 @@
 export const adminMenu = [
     { 
-        name: 'menu.admin.manage-tunure',
+        name: 'menu.admin.manage-term',
         menus: [
 
             {
-                name: 'menu.admin.manage-tunure', link: '/system/manage-tunure'
+                name: 'menu.admin.manage-term', link: '/system/term'
             }
         ]
     },
@@ -19,7 +19,9 @@ export const adminMenu = [
                 name: 'menu.admin.manage-member', link: '/system/manage-member'
             }
         ]
-    }
+    },
+   
+
     
 ];
 

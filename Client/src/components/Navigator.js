@@ -6,17 +6,28 @@ import { connect } from 'react-redux';
 import './Navigator.scss';
 
 class MenuGroup extends Component {
+    getTermOwner = (path) => {
+        // Tách các phần của đường dẫn bằng dấu "/"
+        const parts = path.split('/');
+    
+        // Kiểm tra xem phần tử cuối cùng có tồn tại và trả về nó
+        return parts.length > 0 ? parts[parts.length - 1] : null;
+    }
 
+    checkpathname = () =>{
+        return this.props.name.includes(this.getTermOwner(this.props.location.pathname));
+    }
     render() {
         const { name, children } = this.props;
+        console.log()
         return (
             <>
             
             <li className="menu-group">
-            <div className="menu-group-name ">
+                <div className= {this.checkpathname() === true ? "menu-group-name  menu-group-name-color": "menu-group-name  "}>
                         <FormattedMessage id={name} />
                 </div>
-                <ul className="menu-list list-unstyled">
+                <ul className="menu-list ">
                     {children}
                 </ul>
             </li>

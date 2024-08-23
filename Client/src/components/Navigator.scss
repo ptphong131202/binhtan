@@ -1,13 +1,13 @@
 @import "../styles/common.scss";
 
 .navigator-menu {
-    display: flex;
     margin: 0;
     padding: 0;
 
     &.list-unstyled,
     .list-unstyled {
         list-style-type: none;
+        background-color: antiquewhite;
     }
 
     .menu-group {
@@ -22,25 +22,31 @@
             padding: 0 15px;
             border-right: 1px solid $border;
             min-width: 120px;
-            text-align: center;
+            font-size: 16px;
+
+            &.menu-group-name-color{
+                background-color: green;
+                color: white;
+            }
+            &:hover{
+                color: white;
+            }
             &.name-bold{
                 background-color: green;
                 color: white;
             }
 
-            &:first-child {
-                /* border-left: 1px solid $border; */
+            &:hover .menu-list{
+                display: block;
             }
         }
 
         .menu-list {
             display: none;
             background-color: $bg-menu-color;
-            box-shadow: 2px 2px 4px 0 $box-shadow-color;
-            -webkit-box-shadow: 2px 2px 4px 0 $box-shadow-color;
             color: $text-in-light;
-            position: absolute;
             padding: 0;
+            width: 100%;
 
             .menu {
                 width: 100%;

@@ -2,18 +2,19 @@
 module.exports = {
   up: async ( queryInterface, Sequelize ) =>
   {
-    await queryInterface.createTable( 'Tunures', {
-
+    await queryInterface.createTable( 'actives', {
       id: {
         allowNull: false,
         autoIncrement: true,
         primaryKey: true,
         type: Sequelize.INTEGER
       },
-      tunure: {
-            type: Sequelize.STRING
-        },
-
+      userid: {
+        type: Sequelize.STRING
+      },
+      content: {
+        type: Sequelize.STRING
+      },
       createdAt: {
         allowNull: false,
         type: Sequelize.DATE
@@ -26,6 +27,6 @@ module.exports = {
   },
   down: async ( queryInterface, Sequelize ) =>
   {
-    await queryInterface.dropTable( 'Tunures' );
+    await queryInterface.dropTable( 'actives' );
   }
 };

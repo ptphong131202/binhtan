@@ -1,6 +1,10 @@
 import db from '../models/index';
 import bcrypt from 'bcryptjs';
+const Sequelize = require('sequelize')
+const Op = Sequelize.Op;
 const salt = bcrypt.genSaltSync(10);
+
+//hash password
 let hashUserPassword = (password) => {
     return new Promise(async (resolve, reject) => {
         try {
@@ -13,18 +17,55 @@ let hashUserPassword = (password) => {
     })
 }
 
-let handleUserLogin = (email, password) => {
-    
+/// check email
+let checkUserEmail = (username) => {
     return new Promise(async (resolve, reject) => {
         try {
+            let user = await db.User.findOne({
+                where: {
+                    [Op.or]: [
+                        { email: username },
+                        { mssv: username }
+                    ]
+                }
+            })
+            if (user) {
+                resolve(true)
+            } else {
+                resolve(false)
+            }
+
+        } catch (e) {
+            reject(e)
+        }
+    })
+}
+
+/// đăng nhập
+let handleUserLogin = (email, password) => {
+    return new Promise(async (resolve, reject) => {
+        try {
+            const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+            if (!emailRegex.test(email)) {
+                email = email.charAt(0).toUpperCase() + email.slice(1);
+            }
             let userData = {};
-            let isExist = await checkUserEmail(email);
+            let isExist = await checkUserEmail(email); /// check email 
             if (isExist) {
                 //user already exist
-                let user = await db.Admin.findOne({
+                let user = await db.User.findOne({
                     attributes: ["id", 'email', 'position', 'password', 'fullName'],
-                    where: { email: email },
+                    where: {
+                        [Op.or]: [
+                            { email: email },
+                            { mssv: email }
+                        ]
+                    },
+                    include: [
+                        { model: db.Allcode, as: 'positionUser', attributes: [ 'valueEn', 'valueVi' ] },
+                    ],
                     raw: true,
+                    nest: true
                     
                 });
                 if (user) {
@@ -56,23 +97,7 @@ let handleUserLogin = (email, password) => {
     })
 }
 
-let checkUserEmail = (userEmail) => {
-    return new Promise(async (resolve, reject) => {
-        try {
-            let user = await db.Admin.findOne({
-                where: { email: userEmail }
-            })
-            if (user) {
-                resolve(true)
-            } else {
-                resolve(false)
-            }
 
-        } catch (e) {
-            reject(e)
-        }
-    })
-}
 
 let getallcode = (typeInput) => {
     return new Promise(async (resolve, reject) => {
@@ -105,5 +130,5 @@ module.exports = {
     handleUserLogin: handleUserLogin,
     hashUserPassword: hashUserPassword,
     getallcode: getallcode,
-
+    hashUserPassword:hashUserPassword,
 }

@@ -10,13 +10,12 @@ module.exports = {
         primaryKey: true,
         type: Sequelize.INTEGER
       },
-      adminId: {
-            type: Sequelize.STRING
-        },
-        tunure: {
-            type: Sequelize.STRING
-        },
-
+      adminid: {
+        type: Sequelize.STRING
+      },
+      term: {
+        type: Sequelize.STRING
+      },
       createdAt: {
         allowNull: false,
         type: Sequelize.DATE

@@ -4,7 +4,6 @@ import userService from '../services/userService';
 let handleLoging = async (req, res) => {
     let email = req.body.email;
     let password = req.body.password;
-
     if (!email || !password) // nếu email or password = null
     {
         // return 1 string json object
@@ -13,7 +12,6 @@ let handleLoging = async (req, res) => {
             message: 'Missing inputs parameter!'
         })
     }
-    console.log(email, password)
 
     let userData = await userService.handleUserLogin(email, password)
 
@@ -38,7 +36,9 @@ let getallcode = async (req, res) => {
     }
 }
 
+
+
 module.exports = {
     handleLoging: handleLoging,
-    getallcode: getallcode
+    getallcode: getallcode,
 }

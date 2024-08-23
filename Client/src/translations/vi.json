@@ -6,7 +6,9 @@
             "manage-admin": "Quản lý người dùng",
             "manage-member": "Quản lý hội viên",
             "home-admin": "Trang chủ",
-            "manage-tunure": "Quản lý nhiệm kỳ"
+            "manage-term": "Quản lý nhiệm kỳ",
+            "manage-cat": "Quản lý danh mục"
+
         }
     }
 }

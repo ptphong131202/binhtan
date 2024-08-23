@@ -1,31 +1,40 @@
 import React, { Component } from 'react';
 import { connect } from "react-redux";
 import { Redirect, Route, Switch } from 'react-router-dom';
-import ManageAdmin from '../containers/System/admin/ManageAdmin';
-import ManageMember from '../containers/System/admin/ManageMember';
-import AdminHome from '../containers/System/admin/AdminHome';
 import Header from '../containers/Header/Header';
-import ManageTunure from '../containers/System/Tunure/ManageTunure';
+import Navbar from '../containers/Navbar/Navbar';
+import "./System.scss"
+import Home from '../containers/System/admin/Home';
+import ManageTerm from '../containers/System/term/ManageTerm';
+
 class System extends Component
 {
     render ()
     {
         /* { this.props.isLoggedIn && <Header /> } */
         const { systemMenuPath, isLoggedIn } = this.props;
+        let checkposition = this.props.userInfo.position !== null ? true: false;
+        let linkToRedirect = isLoggedIn && checkposition? '/system/home' : '/home';
+       
         return (
             <React.Fragment>
-                { isLoggedIn && <Header /> }
-                <div className="system-container">
-                    <div className="system-list">
-                        <Switch>
-                            <Route path="/system/manage-admin" component={ ManageAdmin } />
-                            <Route path="/system/home-admin" component={ AdminHome } />
-                            <Route path="/system/manage-member" component={ ManageMember } />
-                            <Route path="/system/manage-tunure" component={ ManageTunure } />
-                            <Route component={ () => { return ( <Redirect to={ systemMenuPath } /> ) } } />
-                        </Switch>
-                    </div>
-                </div>
+                {
+                    checkposition === false ? <Redirect to={ linkToRedirect } />:
+                    <>
+                        { isLoggedIn && <Header /> }
+                        <div className="system-container">
+                            <Navbar />
+                            <div className="system-list">
+                                <Switch>
+                                    <Route path="/system/home" component={ Home } />
+                                    <Route path="/system/term" component={ ManageTerm } />
+                                    <Route component={ () => { return ( <Redirect to={ systemMenuPath } /> ) } } />
+                                </Switch>
+                            </div>
+                        </div>
+                    </>
+                    
+                }
             </React.Fragment>
         );
     }
@@ -35,7 +44,8 @@ const mapStateToProps = state =>
 {
     return {
         systemMenuPath: state.app.systemMenuPath,
-        isLoggedIn: state.user.isLoggedIn
+        isLoggedIn: state.user.isLoggedIn,
+        userInfo: state.user.userInfo,
     };
 };
 

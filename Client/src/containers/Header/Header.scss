@@ -4,7 +4,7 @@
     z-index: 99;
     background-color: white;
     color: black;
-    height: 140px;
+    height: 100px;
     position: fixed;
     top: 0;
     left: 0;
@@ -14,105 +14,64 @@
     box-shadow: rgba(0, 0, 0, 0.16) 0px 1px 4px;
 
     .left{
-        height: 80px;
-        width: 190px;
-        img{
-            height: 140px;
-            width: 190px;
-        }
-    }
-
-    .header-container-down{
-        flex: 1;
-        .top{
-            width: 100%;
-            display: flex;
-            justify-content: space-between;
-            padding: 10px 20px;
-            border-bottom: 1px solid black;
-
-            .name-c{
-                font-size: 35px;
-                font-weight: bold;
-                text-shadow: 0px -1px;
-            }
-
-            .name-u{
-                font-weight: bold;
-                font-size: 16px;
-            }
-        }
-        .language {
-            .language-vi {
-                cursor: pointer;
-                font-size: 20px;
-    
-                &.active {
-                    color: red;
-                }
-            }
-    
-            .welcom {
-                padding: 0 10px;
-                font-size: 20px;
-    
-                b {
-                    color: #1700d3;
-                }
-            }
-    
-            .language-en {
-                padding: 0 10px;
-                cursor: pointer;
-                font-size: 20px;
-    
-                &.active {
-                    color: orange;
-                }
-            }
-    
-            .btn-logout {
-                color: $common-text-color;
-                line-height: 40px;
-                height: 40px;
-                padding: 0 10px;
-    
-                &:hover {
-                    background-color: darken($colormain, 5);
-                }
-    
-                i {
-                    font-size: 21px;
-                    color: black;
-                }
-            }
-        }
-    }
-
-    .header-tabs-container{
-        margin-top: 2px;
+        width: 15%;
+        height: 100%;
         display: flex;
-        .lihome{
-            list-style: none;
-            line-height: 40px;
-            padding: 0 15px;
-            min-width: 120px;
-            text-align: center;
-            border-right: 1px solid $border;
+        justify-content: center;
+        align-items: center;
+        img{
+            width: 60%;
+            height: 100%;
+        }
+    }
+    
+    .right{
+        flex: 1;
+        padding: 10px 20px;
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
 
-            &.onhome{
-                background-color: green;
-                color: white;
+        .top-name{
+            .name-c{
+                font-size: 30px;
+                font-weight: bold;
+            }
+            .name-u{
+                font-size: 20px;
+            }
+        }
+
+        .language{
+            font-size: 20px;
+
+            b{
+                color: red;
+            }
+
+            .language-vi{
+                color: blue;
+                margin-left: 10px;
                 cursor: pointer;
             }
 
-            &:hover{
-                background-color: green;
-                color: white;
+            .language-en{
+                margin-left: 5px;
+                color: green;
                 cursor: pointer;
+            }
+
+            i{
+                margin-left: 10px;
+                font-size: 18px;
+                cursor: pointer;
+                &:hover{
+                    color: blue;
+                }
             }
         }
     }
 
 
 }
+

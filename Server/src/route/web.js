@@ -1,8 +1,7 @@
 import express from "express";
 import userController from '../controllers/userController';
-import backgroundController from "../controllers/backgroundController";
-import tunureController from "../controllers/tunureController";
-import adminController from "../controllers/adminController";
+import termController from '../controllers/termController';
+
 
 let router = express.Router();
 
@@ -14,26 +13,11 @@ let initWebRoutes = (app) => {
 
     router.get('/api/get-allcode', userController.getallcode);
 
-    // backgorund
-    router.get('/api/get-background', backgroundController.getbackground);
-    router.post('/api/post-background', backgroundController.postbackground)
-    router.delete("/api/delete-background", backgroundController.deletebackground); 
 
-    // tunure
-    router.get('/api/get-tunure', tunureController.gettunure);
-    router.get('/api/get-tunure-by-id', tunureController.gettunurebyid);
-    router.post('/api/post-tunure', tunureController.posttunure);
-    router.delete("/api/delete-tunure", tunureController.deletetunure); 
-    router.put("/api/put-tunure", tunureController.puttunure); 
-
-
-    router.post('/api/post-admin', adminController.postAdmin);
-    router.get('/api/get-admin', adminController.getAdmin);
-    router.get('/api/get-admin-by-id', adminController.getAdminbyid);
-    router.put("/api/put-admin", adminController.putAdmin); 
-    router.delete("/api/delete-admin", adminController.deleteadmin); 
-
-    
+    /* term */
+    router.post('/api/post-term', termController.postterm);
+    router.get('/api/get-term', termController.getterm);
+    router.get('/api/get-term-by-id', termController.gettermbyid);
 
 
     return app.use("/", router);

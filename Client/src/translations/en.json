@@ -3,10 +3,12 @@
             "admin": {
                 "wellcome": "Wellcome",
                 "manage-user": "User",
-                "manage-doctor": "Doctor",
                 "manage-admin": "Admin",
                 "manage-member": "Member",
-                "home-admin": "Home"
+                "home-admin": "Home",
+                "manage-cat": "Manage category",
+                "manage-term": "Manage Term" 
+
             }
     }
 }

@@ -2,7 +2,6 @@ import React, { Component } from 'react';
 import { connect } from 'react-redux';
 
 import * as actions from "../../store/actions";
-import Navigator from '../../components/Navigator';
 import { adminMenu, doctorMenu } from './menuApp';
 import './Header.scss';
 import "./Responsive.scss"
@@ -29,7 +28,7 @@ class Header extends Component {
         let menu = [];
         if (userInfo && !_.isEmpty(userInfo)) {
             let role = userInfo.position;
-            if (role === "P1") {
+            if (role === "P0") {
                 menu = adminMenu;
             }
 
@@ -54,40 +53,25 @@ class Header extends Component {
         const { processLogout, language, userInfo } = this.props;
         return (
             <div className="header-container">
-                    <div className='left'>
+                    <div className='left' onClick={() => this.linkTo("/system/home")}>
                             <img src={logo} />
                     </div>
-                <div className='header-container-down'>
-                    <div className='top'>
-                        <div className='top-name topname-display'>
+                    <div className='right'>
+                        <div className='top-name'>
                             <div className='name-c'>CHI HỘI SINH VIÊN BÌNH TÂN</div>
                             <div className='name-u'>ĐẠI HỌC CẦN THƠ</div>
                         </div>
-                         {/* language */}
+                            {/* language */}
                         <div className='language '>
-                            <span className='welcom wellcom-display'><FormattedMessage id="menu.admin.wellcome" />, <b>{userInfo && userInfo.fullName ? userInfo.fullName : ""} !</b></span>
-                            <span onClick={() => { this.handleChangeLanguage(LANGUAGE.VI) }} className={language === LANGUAGE.VI ? "language-vi active" : "language-vi "}>VI</span>
-                            <span onClick={() => { this.handleChangeLanguage(LANGUAGE.EN) }} className={language === LANGUAGE.EN ? "language-en active" : "language-en "}>EN</span>
-                            {/* nút logout */}
-                            <div className="btn btn-logout" onClick={processLogout} title="Logout">
-                                <i className="fas fa-sign-out-alt"></i>
-                            </div>
+                                <span className='welcome '><FormattedMessage id="menu.admin.wellcome" />! <b>{userInfo && userInfo.fullName ? userInfo.fullName : ""} </b></span>
+                                <span onClick={() => { this.handleChangeLanguage(LANGUAGE.VI) }} className={language === LANGUAGE.VI ? "language-vi active" : "language-vi "}>VI</span>
+                                <span onClick={() => { this.handleChangeLanguage(LANGUAGE.EN) }} className={language === LANGUAGE.EN ? "language-en active" : "language-en "}>EN</span>
+                                {/* nút logout */}
+                                <div className="btn btn-logout" onClick={processLogout} title="Logout">
+                                    <i className="fas fa-sign-out-alt"></i>
+                                </div>
                         </div>
                     </div>
-
-                    {/* thanh navigator */}
-                    <li className='lihome header-tabs-container-lihome' >
-                            <i className='fas fa-list'></i>
-                        </li>
-                    <div className="header-tabs-container ">
-                    <li className='lihome' onClick={() => this.linkTo('/system/home-admin')}>
-                            home
-                        </li> 
-                        <Navigator menus={this.state.menuApp} />
-                    </div>
-
-                   
-                </div>
             </div>
             
         );
@@ -111,3 +95,8 @@ const mapDispatchToProps = dispatch => {
 };
 
 export default withRouter(connect(mapStateToProps, mapDispatchToProps)(Header));
+
+
+
+
+ 

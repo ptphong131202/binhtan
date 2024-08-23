@@ -1,24 +1,24 @@
 import React, { Component } from 'react';
 import { connect } from 'react-redux';
-import "./ManageTunure.scss"
+import "./Default.scss"
+import Footer from "../Footer"
+import pen from "../../../assets/font/pencil.png"
 
-class ListCommitee extends Component {
+import { isEmpty } from 'lodash';
+import { toast } from 'react-toastify';
+class Default extends Component {
 
     constructor(props) {
         super(props);
         this.state = {
-            listmember: [],
         };
     }
 
     
+
     render() {
         return (
             <> 
-                <div className='member-content'>
-                    <span onClick={() => this.props.openModalListCommitee()} className='close-member-content'>x</span> 
-                </div>
-                
             </>
         )
     }
@@ -35,4 +35,4 @@ const mapDispatchToProps = dispatch => {
     };
 };
 
-export default connect(mapStateToProps, mapDispatchToProps)(ListCommitee);
+export default connect(mapStateToProps, mapDispatchToProps)(Default);

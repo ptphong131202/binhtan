@@ -1,28 +1,37 @@
-@media (max-width: 991px) {
-    .header-container .header-container-down .top{
-        .topname-display{
-            display: none;
-        }
+@media screen and (max-width: 1024px) {
     
-        .wellcom-display{
+    .header-container .left{
+        width: 45%;
+    }
+
+    .header-container .right {
+        .top-name{
             display: none;
         }
 
-        justify-content: right;
+        .language{
+            font-size: 14px;
+    
+            .welcome {
+                display: block;
+                font-size: 14px;
+                b{
+                    display: block;
+                }
+            }
+    
+            .language-vi{
+                margin-left: 0;
+            }
+        
+        }
     }
-    .header-container .header-tabs-container{
+
+    .system-nav{
         display: none;
-    }
-    .header-tabs-container-lihome{
-        height: 80px;
-        display: flex;
-        justify-content: center;
-        align-items: center;
     }
 }
 
-@media (min-width: 992px) {
-   .header-tabs-container-lihome{
-    display: none;
-   }
+@media screen and (min-width: 1024px) {
+    
 }

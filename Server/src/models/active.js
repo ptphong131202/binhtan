@@ -3,7 +3,7 @@ const {
     Model
 } = require('sequelize');
 module.exports = (sequelize, DataTypes) => {
-    class Bio extends Model {
+    class Active extends Model {
         /**
          * Helper method for defining associations.
          * This method is not a part of Sequelize lifecycle.
@@ -11,15 +11,15 @@ module.exports = (sequelize, DataTypes) => {
          */
         static associate(models) {
             // define association here
-            /* Bio.hasMany(models.User, { foreignKey: 'position', as: 'positionUser' }); */
+            /* Active.hasMany(models.User, { foreignKey: 'position', as: 'positionUser' }); */
         }
     };
-    Bio.init({
-        adminid: DataTypes.STRING,
-        term: DataTypes.STRING,
+    Active.init({
+        userid: DataTypes.STRING,
+        content: DataTypes.STRING,
     }, {
         sequelize,
-        modelName: 'Bio',
+        modelName: 'Active',
     });
-    return Bio;
+    return Active;
 };
